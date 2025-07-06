@@ -1,0 +1,1192 @@
+#root {
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-sizing: border-box;
+}
+
+/* Enhanced padding for ultrawide monitors */
+@media (min-width: 1600px) {
+    #root {
+        padding: 1.5rem;
+    }
+}
+
+@media (min-width: 2400px) {
+    #root {
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 3200px) {
+    #root {
+        padding: 3rem;
+    }
+}
+
+.card {
+    padding: 2em;
+}
+
+/* Custom scrollbar for the content area */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #ff5722, #009688);
+}
+
+/* Enhance form inputs with better styling */
+input,
+select {
+    transition: all 0.3s ease !important;
+}
+
+input:focus,
+select:focus {
+    transform: scale(1.02) !important;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3) !important;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.MuiBox-root {
+    animation: fadeIn 0.3s ease-out;
+    padding: 1rem 2rem;
+}
+
+/* Remove CRUD container height restrictions */
+.crud-layout.MuiBox-root {
+    padding: 1rem !important;
+}
+
+/* Remove recipe crud height restrictions */
+.recipe-crud.crud-layout.MuiBox-root {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Let recipe list section take natural height */
+.recipe-crud .crud-layout__list {
+    /* Natural height, no restrictions */
+}
+
+/* Let data grid take natural height */
+.recipe-crud__recipes-list.data-grid {
+    /* Natural height, no restrictions */
+}
+
+/* Enhanced spacing for ultrawide screens */
+@media (min-width: 1600px) {
+    .MuiBox-root {
+        padding: 1.5rem 3rem;
+    }
+}
+
+@media (min-width: 2400px) {
+    .MuiBox-root {
+        padding: 2rem 4rem;
+    }
+}
+
+@media (min-width: 3200px) {
+    .MuiBox-root {
+        padding: 2.5rem 5rem;
+    }
+}
+
+@media (min-width: 4000px) {
+    .MuiBox-root {
+        padding: 3rem 6rem;
+    }
+}
+
+/* Content area should be naturally scrollable */
+.MuiContainer-root {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Ensure tab content fills available space */
+.crud-layout,
+.recipe-chain-visualizer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.crud-layout__header {
+    margin-bottom: 1rem;
+}
+
+.crud-layout__form {
+    margin-bottom: 2rem;
+    flex-shrink: 0;
+}
+
+.crud-layout__list {
+    /* Just let it take natural height */
+}
+
+.crud-layout__header {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+}
+
+/* Enhanced content padding for ultrawide screens */
+@media (min-width: 1600px) {
+    .crud-layout,
+    .recipe-chain-visualizer {
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media (min-width: 2400px) {
+    .crud-layout,
+    .recipe-chain-visualizer {
+        padding: 2rem 3rem;
+    }
+}
+
+@media (min-width: 3200px) {
+    .crud-layout,
+    .recipe-chain-visualizer {
+        padding: 2.5rem 4rem;
+    }
+}
+
+@media (min-width: 4000px) {
+    .crud-layout,
+    .recipe-chain-visualizer {
+        padding: 3rem 5rem;
+    }
+}
+
+/* Dark Theme Form Styles */
+.dark-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-bottom: 24px;
+    padding: 24px;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border-radius: 12px;
+    border: 2px solid #4a5568;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+/* Enhanced form layouts for ultrawide screens */
+@media (min-width: 1600px) {
+    .dark-form {
+        gap: 20px;
+        padding: 32px;
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 2400px) {
+    .dark-form {
+        gap: 24px;
+        padding: 40px;
+    }
+}
+
+@media (min-width: 3200px) {
+    .dark-form {
+        gap: 32px;
+        padding: 48px;
+    }
+}
+
+.dark-input {
+    padding: 12px 16px;
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.dark-input:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 4px 12px rgba(99, 179, 237, 0.4);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.dark-input:hover {
+    border-color: #63b3ed;
+}
+
+.dark-input::placeholder {
+    color: #a0aec0;
+}
+
+.dark-select {
+    padding: 12px 16px;
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.dark-select:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 4px 12px rgba(99, 179, 237, 0.4);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.dark-select:hover {
+    border-color: #63b3ed;
+}
+
+.dark-select option {
+    background-color: #2d3748;
+    color: #e2e8f0;
+}
+
+/* Dark Checkbox Styles */
+.dark-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #4a5568;
+    border-radius: 4px;
+    background-color: #2d3748;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    margin-right: 8px;
+}
+
+.dark-checkbox:checked {
+    background-color: #63b3ed;
+    border-color: #63b3ed;
+}
+
+.dark-checkbox:checked::after {
+    content: "✓";
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dark-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.3);
+}
+
+.dark-checkbox:hover {
+    border-color: #63b3ed;
+}
+
+.dark-checkbox-label {
+    display: flex;
+    align-items: center;
+    color: #e2e8f0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+}
+
+.dark-checkbox-text {
+    margin-left: 4px;
+}
+
+/* Textarea styles */
+.dark-textarea {
+    padding: 12px 16px;
+    background-color: #2d3748;
+    color: #e2e8f0;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    resize: vertical;
+    min-height: 48px;
+    font-family: inherit;
+}
+
+.dark-textarea:focus {
+    border-color: #63b3ed;
+    box-shadow: 0 4px 12px rgba(99, 179, 237, 0.4);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.dark-textarea:hover {
+    border-color: #63b3ed;
+}
+
+.dark-textarea::placeholder {
+    color: #a0aec0;
+}
+
+/* Form Field Sizing Classes - Fixed Widths */
+.form-field-small {
+    width: 100px;
+    min-width: 100px;
+    flex: 0 0 100px;
+}
+
+.form-field-medium {
+    width: 150px;
+    min-width: 150px;
+    flex: 0 0 150px;
+}
+
+.form-field-large {
+    width: 200px;
+    min-width: 200px;
+    flex: 0 0 200px;
+}
+
+.form-field-xlarge {
+    width: 300px;
+    min-width: 300px;
+    flex: 0 0 300px;
+}
+
+.form-field-full {
+    width: 100%;
+    flex: 1;
+}
+
+/* Form Field Fractional Width Classes - Container-Based */
+.form-field-1-2 {
+    width: calc(50% - 6px);
+    flex: 0 0 calc(50% - 6px);
+}
+
+.form-field-1-3 {
+    width: calc(33.333% - 8px);
+    flex: 0 0 calc(33.333% - 8px);
+}
+
+.form-field-2-3 {
+    width: calc(66.666% - 4px);
+    flex: 0 0 calc(66.666% - 4px);
+}
+
+.form-field-1-4 {
+    width: calc(25% - 9px);
+    flex: 0 0 calc(25% - 9px);
+}
+
+.form-field-3-4 {
+    width: calc(75% - 3px);
+    flex: 0 0 calc(75% - 3px);
+}
+
+.form-field-1-5 {
+    width: calc(20% - 9.6px);
+    flex: 0 0 calc(20% - 9.6px);
+}
+
+.form-field-2-5 {
+    width: calc(40% - 7.2px);
+    flex: 0 0 calc(40% - 7.2px);
+}
+
+.form-field-3-5 {
+    width: calc(60% - 4.8px);
+    flex: 0 0 calc(60% - 4.8px);
+}
+
+.form-field-4-5 {
+    width: calc(80% - 2.4px);
+    flex: 0 0 calc(80% - 2.4px);
+}
+
+.form-field-auto {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Enhanced form field layouts for ultrawide screens */
+@media (min-width: 1600px) {
+    /* Fixed width classes grow on larger screens */
+    .form-field-small {
+        width: 120px;
+        min-width: 120px;
+        flex: 0 0 120px;
+    }
+
+    .form-field-medium {
+        width: 180px;
+        min-width: 180px;
+        flex: 0 0 180px;
+    }
+
+    .form-field-large {
+        width: 240px;
+        min-width: 240px;
+        flex: 0 0 240px;
+    }
+
+    .form-field-xlarge {
+        width: 360px;
+        min-width: 360px;
+        flex: 0 0 360px;
+    }
+
+    /* Fractional classes adjust gap compensation for larger gaps */
+    .form-field-1-2 {
+        width: calc(50% - 8px);
+        flex: 0 0 calc(50% - 8px);
+    }
+
+    .form-field-1-3 {
+        width: calc(33.333% - 10.667px);
+        flex: 0 0 calc(33.333% - 10.667px);
+    }
+
+    .form-field-2-3 {
+        width: calc(66.666% - 5.333px);
+        flex: 0 0 calc(66.666% - 5.333px);
+    }
+
+    .form-field-1-4 {
+        width: calc(25% - 12px);
+        flex: 0 0 calc(25% - 12px);
+    }
+
+    .form-field-3-4 {
+        width: calc(75% - 4px);
+        flex: 0 0 calc(75% - 4px);
+    }
+
+    .form-field-1-5 {
+        width: calc(20% - 12.8px);
+        flex: 0 0 calc(20% - 12.8px);
+    }
+
+    .form-field-2-5 {
+        width: calc(40% - 9.6px);
+        flex: 0 0 calc(40% - 9.6px);
+    }
+
+    .form-field-3-5 {
+        width: calc(60% - 6.4px);
+        flex: 0 0 calc(60% - 6.4px);
+    }
+
+    .form-field-4-5 {
+        width: calc(80% - 3.2px);
+        flex: 0 0 calc(80% - 3.2px);
+    }
+}
+
+@media (min-width: 2400px) {
+    /* Fixed width classes grow more on very large screens */
+    .form-field-small {
+        width: 140px;
+        min-width: 140px;
+        flex: 0 0 140px;
+    }
+
+    .form-field-medium {
+        width: 200px;
+        min-width: 200px;
+        flex: 0 0 200px;
+    }
+
+    .form-field-large {
+        width: 280px;
+        min-width: 280px;
+        flex: 0 0 280px;
+    }
+
+    .form-field-xlarge {
+        width: 420px;
+        min-width: 420px;
+        flex: 0 0 420px;
+    }
+
+    /* Fractional classes adjust for even larger gaps */
+    .form-field-1-2 {
+        width: calc(50% - 10px);
+        flex: 0 0 calc(50% - 10px);
+    }
+
+    .form-field-1-3 {
+        width: calc(33.333% - 13.333px);
+        flex: 0 0 calc(33.333% - 13.333px);
+    }
+
+    .form-field-2-3 {
+        width: calc(66.666% - 6.667px);
+        flex: 0 0 calc(66.666% - 6.667px);
+    }
+
+    .form-field-1-4 {
+        width: calc(25% - 15px);
+        flex: 0 0 calc(25% - 15px);
+    }
+
+    .form-field-3-4 {
+        width: calc(75% - 5px);
+        flex: 0 0 calc(75% - 5px);
+    }
+
+    .form-field-1-5 {
+        width: calc(20% - 16px);
+        flex: 0 0 calc(20% - 16px);
+    }
+
+    .form-field-2-5 {
+        width: calc(40% - 12px);
+        flex: 0 0 calc(40% - 12px);
+    }
+
+    .form-field-3-5 {
+        width: calc(60% - 8px);
+        flex: 0 0 calc(60% - 8px);
+    }
+
+    .form-field-4-5 {
+        width: calc(80% - 4px);
+        flex: 0 0 calc(80% - 4px);
+    }
+}
+
+@media (min-width: 3200px) {
+    /* Fixed width classes continue to grow */
+    .form-field-small {
+        width: 160px;
+        min-width: 160px;
+        flex: 0 0 160px;
+    }
+
+    .form-field-medium {
+        width: 220px;
+        min-width: 220px;
+        flex: 0 0 220px;
+    }
+
+    .form-field-large {
+        width: 320px;
+        min-width: 320px;
+        flex: 0 0 320px;
+    }
+
+    .form-field-xlarge {
+        width: 480px;
+        min-width: 480px;
+        flex: 0 0 480px;
+    }
+}
+
+/*
+ * Form Field Width Class Reference:
+ * 
+ * Fixed Width Classes (for specific sizes):
+ * - .form-field-small    - 100px (120px on 1600px+)
+ * - .form-field-medium   - 150px (180px on 1600px+)
+ * - .form-field-large    - 200px (240px on 1600px+)
+ * - .form-field-xlarge   - 300px (360px on 1600px+)
+ * 
+ * Fractional Width Classes (responsive to container):
+ * - .form-field-1-2      - 50% width (half)
+ * - .form-field-1-3      - 33.33% width (one third)
+ * - .form-field-2-3      - 66.66% width (two thirds)
+ * - .form-field-1-4      - 25% width (one quarter)
+ * - .form-field-3-4      - 75% width (three quarters)
+ * - .form-field-1-5      - 20% width (one fifth)
+ * - .form-field-2-5      - 40% width (two fifths)
+ * - .form-field-3-5      - 60% width (three fifths)
+ * - .form-field-4-5      - 80% width (four fifths)
+ * - .form-field-auto     - Flexible width (takes remaining space)
+ * - .form-field-full     - 100% width
+ * 
+ * Usage Examples:
+ * - Name field (short): .form-field-1-4 or .form-field-small
+ * - Description field (long): .form-field-1-2 or .form-field-2-3
+ * - Checkbox/Toggle: .form-field-auto
+ * - Full-width textarea: .form-field-full
+ */
+
+/* Form Layout Classes */
+.form-layout {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+}
+
+.form-layout__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+    width: 100%;
+}
+
+.form-layout__row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form-layout__row--nowrap {
+    flex-wrap: nowrap;
+}
+
+.form-layout__row > * {
+    box-sizing: border-box;
+}
+
+.form-layout__submit {
+    align-self: flex-start;
+}
+
+/* Ensure form inputs take full width of their allocated space */
+.form-layout__row .dark-input,
+.form-layout__row .dark-select,
+.form-layout__row .dark-textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container for form field with relative positioning for chiclets */
+.form-field-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-container .dark-input,
+.form-field-container .dark-select,
+.form-field-container .dark-textarea {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Enhanced form layouts for ultrawide screens */
+@media (min-width: 1600px) {
+    .form-layout {
+        gap: 32px;
+    }
+
+    .form-layout__row {
+        gap: 16px;
+        flex-wrap: nowrap;
+    }
+
+    .form-layout__fields {
+        gap: 16px;
+    }
+}
+
+@media (min-width: 2400px) {
+    .form-layout {
+        gap: 40px;
+    }
+
+    .form-layout__row {
+        gap: 20px;
+    }
+}
+
+/* Form Container Styles */
+.form-container {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #4a5568;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1600px) {
+    .form-container {
+        padding: 32px;
+    }
+}
+
+@media (min-width: 2400px) {
+    .form-container {
+        padding: 40px;
+    }
+}
+
+@media (min-width: 3200px) {
+    .form-container {
+        padding: 48px;
+    }
+}
+
+/* Keyboard Chiclet Styles */
+.keyboard-chiclet {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 10px;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    max-width: fit-content;
+    min-width: 16px;
+    height: 16px;
+    line-height: 1;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    white-space: nowrap;
+    z-index: 10;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.keyboard-chiclet--large {
+    font-size: 12px;
+    padding: 2px 4px;
+    min-width: 20px;
+    height: 20px;
+    width: auto;
+    max-width: fit-content;
+}
+
+.keyboard-chiclet--bottom-right {
+    top: auto;
+    bottom: -8px;
+    right: -8px;
+    left: auto;
+}
+
+.keyboard-chiclet--bottom-center {
+    top: auto;
+    bottom: -8px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: fit-content;
+}
+
+.keyboard-chiclet--top-left {
+    top: -8px;
+    left: -8px;
+    right: auto;
+    width: auto;
+    max-width: fit-content;
+}
+
+/* Inline chiclet variant for KeyboardIndicator component */
+.keyboard-chiclet--inline {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0;
+    display: inline-flex;
+    width: auto;
+    max-width: fit-content;
+}
+
+/* Ensure absolute positioned chiclets don't inherit container width */
+.MuiBox-root .keyboard-chiclet,
+.MuiBox-root.keyboard-chiclet {
+    width: auto !important;
+    max-width: fit-content !important;
+    flex: none !important;
+}
+
+/* Tab label containers should not take full width */
+.tab-label-container.MuiBox-root {
+    width: auto !important;
+    max-width: fit-content !important;
+}
+
+/* Tab and Container Styles */
+.MuiTabs-root {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.MuiTab-root {
+    min-width: auto !important;
+    padding: 12px 16px !important;
+    flex: 1 !important;
+    max-width: none !important;
+}
+
+/* Enhanced tab spacing for ultrawide screens */
+@media (min-width: 1600px) {
+    .MuiTab-root {
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+        min-width: 180px !important;
+    }
+}
+
+@media (min-width: 2400px) {
+    .MuiTab-root {
+        padding: 16px 28px !important;
+        font-size: 1.1rem !important;
+        min-width: 220px !important;
+    }
+}
+
+@media (min-width: 3200px) {
+    .MuiTab-root {
+        padding: 20px 36px !important;
+        font-size: 1.2rem !important;
+        min-width: 280px !important;
+    }
+}
+
+@media (min-width: 4000px) {
+    .MuiTab-root {
+        padding: 24px 44px !important;
+        font-size: 1.3rem !important;
+        min-width: 320px !important;
+    }
+}
+
+/* Enhanced tab distribution for ultrawide screens */
+.MuiTabs-flexContainer {
+    width: 100% !important;
+    justify-content: space-between !important;
+}
+
+/* Full width containers */
+.MuiContainer-root {
+    width: 100% !important;
+    max-width: none !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+}
+
+@media (min-width: 1600px) {
+    .MuiContainer-root {
+        padding-left: 32px !important;
+        padding-right: 32px !important;
+    }
+}
+
+@media (min-width: 2400px) {
+    .MuiContainer-root {
+        padding-left: 48px !important;
+        padding-right: 48px !important;
+    }
+}
+
+@media (min-width: 3200px) {
+    .MuiContainer-root {
+        padding-left: 64px !important;
+        padding-right: 64px !important;
+    }
+}
+
+@media (min-width: 4000px) {
+    .MuiContainer-root {
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+    }
+}
+
+/* Data Grid and List Styles */
+.data-grid {
+    width: 100%;
+    max-width: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.dark-list {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+.data-grid__item,
+.data-grid__accordion,
+.dark-list-item {
+    background: transparent;
+    border-bottom: 1px solid #4a5568;
+    padding: 16px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 60px;
+}
+
+/* Specific styles for accordion mode */
+.data-grid__accordion {
+    display: block !important;
+    padding: 0 !important;
+    border-bottom: 1px solid #4a5568 !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    margin-bottom: 8px !important;
+    border-radius: 4px !important;
+}
+
+.data-grid__item-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    flex: 1;
+}
+
+.data-grid__item:hover,
+.data-grid__accordion:hover,
+.dark-list-item:hover {
+    background: rgba(99, 179, 237, 0.1) !important;
+}
+
+.data-grid__item--selected,
+.data-grid__accordion--selected,
+.dark-list-item--selected {
+    background: rgba(99, 179, 237, 0.2) !important;
+    border-left: 4px solid #63b3ed !important;
+}
+
+.data-grid__item:last-child,
+.data-grid__accordion:last-child,
+.dark-list-item:last-child {
+    border-bottom: none;
+}
+
+.dark-list-text {
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.dark-list-secondary {
+    color: #a0aec0;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.dark-list-empty {
+    padding: 48px 24px;
+    text-align: center;
+    color: #a0aec0;
+    font-style: italic;
+}
+
+/* Data Grid Action Buttons */
+.data-grid__item-actions {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.data-grid__item-actions .MuiButton-root {
+    padding: 4px 8px !important;
+    min-width: auto !important;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+/* Enhanced data grid spacing for ultrawide screens */
+@media (min-width: 1600px) {
+    .dark-list-item {
+        padding: 20px 28px;
+        gap: 16px;
+    }
+
+    .dark-list-text {
+        font-size: 17px;
+    }
+
+    .dark-list-secondary {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 2400px) {
+    .dark-list-item {
+        padding: 24px 36px;
+        gap: 20px;
+    }
+
+    .dark-list-text {
+        font-size: 18px;
+    }
+
+    .dark-list-secondary {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 3200px) {
+    .dark-list-item {
+        padding: 28px 44px;
+        gap: 24px;
+    }
+
+    .dark-list-text {
+        font-size: 19px;
+    }
+
+    .dark-list-secondary {
+        font-size: 17px;
+    }
+}
+
+/* Specific DataGrid component width styles */
+.data-grid__accordion .MuiAccordion-root {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.data-grid__accordion-summary,
+.data-grid__accordion-details {
+    width: 100% !important;
+}
+
+.data-grid__accordion-summary .MuiAccordionSummary-content {
+    width: 100% !important;
+    flex: 1 !important;
+}
+
+/* Ensure MUI Accordion components take full width and are visible */
+.MuiAccordion-root {
+    width: 100% !important;
+    max-width: none !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid #4a5568 !important;
+    border-radius: 4px !important;
+    margin-bottom: 8px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.MuiAccordion-root::before {
+    display: none !important;
+}
+
+.MuiAccordionSummary-root {
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+    transition: background-color 0.2s ease !important;
+    min-height: 48px !important;
+}
+
+.MuiAccordionSummary-root:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.MuiAccordionSummary-content {
+    width: 100% !important;
+    margin: 12px 0 !important;
+}
+
+.MuiAccordionDetails-root {
+    width: 100% !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-top: 1px solid #4a5568 !important;
+}
+
+/* CRUD List Container Styles */
+.unit-crud__units-list,
+.item-crud__items-list,
+.building-crud__buildings-list,
+.recipe-crud__recipes-list {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+.unit-crud__unit-item,
+.item-crud__item-item,
+.building-crud__building-item,
+.recipe-crud__recipe-item {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Ensure all data grid containers take full width */
+.crud-layout__list .data-grid,
+.crud-layout__list .dark-list {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Ensure grid rows expand to fill their container */
+.crud-layout__list {
+    width: 100%;
+    flex: 1;
+}
+
+.crud-layout__form {
+    width: 100%;
+    flex-shrink: 0;
+}
+
+/* Make sure the Box containers for data grids don't constrain width */
+.crud-layout__list > .MuiBox-root {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 0 !important;
+}

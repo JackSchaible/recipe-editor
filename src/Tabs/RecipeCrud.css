@@ -1,0 +1,349 @@
+/* Recipe CRUD Styles */
+.recipe-crud {
+    padding: 24px;
+}
+
+.recipe-crud .crud-layout__list {
+    /* Natural height */
+}
+
+.recipe-crud__title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recipe-crud__form-container {
+    padding: 24px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+}
+
+.recipe-crud__form-title {
+    margin-bottom: 16px;
+    color: #e2e8f0;
+    font-weight: bold;
+}
+
+.recipe-crud__form {
+    /* Uses existing .dark-form class from App.css */
+}
+
+.recipe-crud__name-input {
+    width: 140px;
+}
+
+.recipe-crud__description-input {
+    width: 200px;
+}
+
+.recipe-crud__power-input {
+    width: 80px;
+}
+
+.recipe-crud__water-input {
+    width: 80px;
+}
+
+.recipe-crud__time-input {
+    width: 80px;
+}
+
+.recipe-crud__building-select {
+    width: 150px;
+}
+
+.recipe-crud__submit-button {
+    background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(33, 150, 243, 0.4);
+    transition: all 0.2s ease;
+}
+
+.recipe-crud__submit-button:hover {
+    background: linear-gradient(45deg, #1976d2 30%, #0097a7 90%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.5);
+}
+
+.recipe-crud__cancel-button {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.recipe-crud__cancel-button:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.recipe-crud__recipes-list {
+    /* Container for recipe accordions - natural height */
+}
+
+.recipe-crud__accordion {
+    margin-bottom: 8px !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid #4a5568 !important;
+    border-radius: 4px !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+}
+
+.recipe-crud__accordion::before {
+    display: none;
+}
+
+.recipe-crud__accordion-summary {
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease;
+}
+
+.recipe-crud__accordion-summary:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+.recipe-crud__accordion-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.recipe-crud__recipe-id {
+    min-width: 80px;
+    font-weight: bold;
+}
+
+.recipe-crud__recipe-name {
+    min-width: 120px;
+}
+
+.recipe-crud__recipe-description {
+    min-width: 180px;
+    color: #a0aec0;
+}
+
+.recipe-crud__recipe-power {
+    min-width: 80px;
+}
+
+.recipe-crud__recipe-water {
+    min-width: 80px;
+}
+
+.recipe-crud__recipe-time {
+    min-width: 80px;
+}
+
+.recipe-crud__recipe-building {
+    min-width: 120px;
+}
+
+.recipe-crud__recipe-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+}
+
+.recipe-crud__accordion-details {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+    border: 2px solid #4a5568;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Recipe details section styling to match building cost panel */
+.recipe-crud__recipe-details {
+    padding: 16px;
+    background: transparent;
+}
+
+.recipe-crud__recipe-details .MuiPaper-root {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-crud__recipe-details .MuiPaper-root:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* I/O item styling within the panels */
+.recipe-crud__recipe-details .MuiBox-root[style*="borderBottom"] {
+    border-radius: 4px;
+    margin: 2px 0;
+    padding: 6px 8px;
+    transition: all 0.2s ease;
+}
+
+.recipe-crud__recipe-details .MuiBox-root[style*="borderBottom"]:hover {
+    background: rgba(78, 205, 196, 0.1);
+    border-radius: 6px;
+}
+
+.recipe-crud__io-section-title {
+    margin-bottom: 16px;
+    color: #e2e8f0;
+    font-weight: bold;
+}
+
+.recipe-crud__io-form {
+    /* Uses existing .dark-form class from App.css */
+}
+
+.recipe-crud__io-item-select {
+    width: 150px;
+}
+
+.recipe-crud__io-amount-input {
+    width: 80px;
+}
+
+.recipe-crud__io-type-select {
+    width: 100px;
+}
+
+.recipe-crud__io-submit-button {
+    background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(33, 150, 243, 0.4);
+    transition: all 0.2s ease;
+}
+
+.recipe-crud__io-submit-button:hover {
+    background: linear-gradient(45deg, #1976d2 30%, #0097a7 90%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.5);
+}
+
+.recipe-crud__io-cancel-button {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.recipe-crud__io-cancel-button:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.recipe-crud__io-lists {
+    display: flex;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.recipe-crud__io-list {
+    flex: 1;
+}
+
+.recipe-crud__io-list-title {
+    margin-bottom: 8px;
+}
+
+.recipe-crud__io-list-title--inputs {
+    color: #ff6b6b;
+}
+
+.recipe-crud__io-list-title--outputs {
+    color: #48bb78;
+}
+
+.recipe-crud__io-list-empty {
+    color: #a0aec0;
+}
+
+.recipe-crud__io-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    padding: 8px;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.recipe-crud__io-item--input {
+    background-color: rgba(255, 107, 107, 0.2);
+}
+
+.recipe-crud__io-item--output {
+    background-color: rgba(72, 187, 120, 0.2);
+}
+
+.recipe-crud__io-item-name {
+    /* Default typography */
+}
+
+/* Enhanced styling for recipe I/O items in accordion details */
+.recipe-crud__recipe-details .MuiBox-root {
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.recipe-crud__recipe-details .MuiBox-root:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.recipe-crud__recipe-details .MuiTypography-h6 {
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Power/Water/Time summary styling */
+.recipe-crud__recipe-details > .MuiTypography-root:first-child {
+    background: linear-gradient(
+        135deg,
+        rgba(78, 205, 196, 0.1) 0%,
+        rgba(78, 205, 196, 0.05) 100%
+    );
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid rgba(78, 205, 196, 0.2);
+    font-weight: 500;
+    text-align: center;
+}
+
+.recipe-crud__io-item-amount {
+    font-weight: bold;
+}
+
+.recipe-crud__io-item-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+}
+
+.recipe-crud__io-edit-button {
+    min-width: auto;
+    padding: 4px 8px;
+}
+
+.recipe-crud__io-delete-button {
+    /* Default IconButton styles */
+}

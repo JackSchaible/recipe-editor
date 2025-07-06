@@ -1,0 +1,233 @@
+/* Building CRUD Styles */
+.building-crud {
+    padding: 24px;
+}
+
+.building-crud__title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.building-crud__form-container {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.building-crud__form-title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    color: #63b3ed;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.building-crud__name-input {
+    width: 140px;
+    height: 48px; /* Consistent height with other controls */
+}
+
+.building-crud__description-input {
+    width: 200px;
+    height: 48px; /* Consistent height with other controls */
+}
+
+.building-crud__crew-input {
+    width: 80px;
+    height: 48px; /* Consistent height with other controls */
+}
+
+.building-crud__submit-button {
+    background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(33, 150, 243, 0.4);
+    transition: all 0.2s ease;
+}
+
+.building-crud__submit-button:hover {
+    background: linear-gradient(45deg, #1976d2 30%, #0097a7 90%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.5);
+}
+
+.building-crud__cancel-button {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.building-crud__cancel-button:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.building-crud__cost-editor-container {
+    margin-top: 24px;
+    padding: 24px;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+}
+
+.building-crud__buildings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.building-crud__accordion {
+    margin-bottom: 16px;
+}
+
+.building-crud__accordion-summary {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border-radius: 8px 8px 0 0;
+    border: 2px solid #4a5568;
+    transition: border-color 0.2s ease;
+}
+
+.building-crud__accordion-summary:hover {
+    border-color: #63b3ed;
+}
+
+.building-crud__accordion-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
+.building-crud__building-id {
+    /* Uses existing .dark-list-id class from App.css */
+}
+
+.building-crud__building-item {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.building-crud__building-item:hover {
+    border-color: #63b3ed;
+    box-shadow: 0 2px 8px rgba(99, 179, 237, 0.2);
+}
+
+.building-crud__building-item.selected {
+    border-color: #4cd9c4;
+    box-shadow: 0 2px 12px rgba(76, 217, 196, 0.3);
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+}
+
+.building-crud__building-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.building-crud__building-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.building-crud__building-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    margin-bottom: 4px;
+}
+
+.building-crud__building-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.building-crud__building-description {
+    color: #a0aec0;
+    font-size: 0.875rem;
+}
+
+.building-crud__building-description--empty {
+    color: #718096;
+    font-style: italic;
+}
+
+.building-crud__building-crew {
+    color: #a0aec0;
+    font-size: 0.875rem;
+}
+
+.building-crud__building-costs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.building-crud__cost-pill {
+    display: inline-flex;
+    align-items: center;
+    background-color: rgba(76, 205, 196, 0.1);
+    border: 1px solid rgba(76, 205, 196, 0.3);
+    border-radius: 12px;
+    padding: 2px 8px;
+    font-size: 0.75rem;
+    color: rgba(76, 205, 196, 1);
+    white-space: nowrap;
+}
+
+.building-crud__building-actions {
+    display: flex;
+    align-self: center;
+}
+
+/* Empty state */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+    color: #718096;
+}
+
+.empty-state__icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    opacity: 0.6;
+}
+
+.empty-state__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #a0aec0;
+}
+
+.empty-state__subtitle {
+    font-size: 0.875rem;
+    color: #718096;
+}

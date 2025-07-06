@@ -1,0 +1,105 @@
+/* Construction Cost Editor Styles */
+.construction-cost-editor {
+    /* Container styles handled by parent */
+}
+
+.construction-cost-editor__title {
+    margin-bottom: 16px;
+    color: #e2e8f0;
+    font-weight: bold;
+}
+
+.construction-cost-editor__form {
+    /* Uses existing .dark-form class from App.css */
+}
+
+.construction-cost-editor__item-select {
+    width: 150px;
+}
+
+.construction-cost-editor__amount-input {
+    width: 80px;
+}
+
+.construction-cost-editor__submit-button {
+    background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(33, 150, 243, 0.4);
+    transition: all 0.2s ease;
+}
+
+.construction-cost-editor__submit-button:hover {
+    background: linear-gradient(45deg, #1976d2 30%, #0097a7 90%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.5);
+}
+
+.construction-cost-editor__cancel-button {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.construction-cost-editor__cancel-button:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.construction-cost-editor__list {
+    margin-top: 16px;
+}
+
+.construction-cost-editor__empty-state {
+    color: #a0aec0;
+    font-style: italic;
+    text-align: center;
+    padding: 16px 0;
+}
+
+.construction-cost-editor__list-item {
+    /* Uses existing .dark-list-item class from App.css */
+}
+
+.construction-cost-editor__item-name {
+    min-width: 150px;
+}
+
+.construction-cost-editor__amount-display {
+    min-width: 80px;
+}
+
+.construction-cost-editor__edit-button {
+    background: linear-gradient(45deg, #28a745 30%, #20c997 90%);
+    color: white;
+    font-weight: bold;
+    min-width: auto;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.construction-cost-editor__edit-button:hover {
+    background: linear-gradient(45deg, #218838 30%, #1a9f7a 90%);
+    transform: scale(1.05);
+}
+
+.construction-cost-editor__delete-button {
+    background: linear-gradient(45deg, #dc3545 30%, #fd7e14 90%);
+    color: white;
+    font-weight: bold;
+    min-width: auto;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.construction-cost-editor__delete-button:hover {
+    background: linear-gradient(45deg, #c82333 30%, #e55a00 90%);
+    transform: scale(1.05);
+}

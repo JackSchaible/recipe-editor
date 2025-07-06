@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SI Prefix Logic Fix Test</title>
+        <style>
+            body {
+                font-family: monospace;
+                padding: 20px;
+                background: #1a1a1a;
+                color: #e0e0e0;
+            }
+            h1 {
+                color: #4ccdff;
+            }
+            .test-case {
+                margin: 8px 0;
+            }
+            .input {
+                color: #999;
+            }
+            .output {
+                color: #4caf50;
+                font-weight: bold;
+            }
+            .correct {
+                color: #4caf50;
+            }
+            .incorrect {
+                color: #ff5722;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SI Prefix Logic Fix Test</h1>
+        <div id="results"></div>
+
+        <script type="module">
+            function normalizeToSIUnit(value, inputUnit) {
+                if (value === 0) return `0 ${inputUnit}`;
+
+                const siPrefixMap = new Map([
+                    ["Q", 1e30],
+                    ["R", 1e27],
+                    ["Y", 1e24],
+                    ["Z", 1e21],
+                    ["E", 1e18],
+                    ["P", 1e15],
+                    ["T", 1e12],
+                    ["G", 1e9],
+                    ["M", 1e6],
+                    ["k", 1e3],
+                    ["h", 1e2],
+                    ["da", 1e1],
+                    ["", 1],
+                    ["d", 1e-1],
+                    ["c", 1e-2],
+                    ["m", 1e-3],
+                    ["μ", 1e-6],
+                    ["n", 1e-9],
+                    ["p", 1e-12],
+                    ["f", 1e-15],
+                    ["a", 1e-18],
+                    ["z", 1e-21],
+                    ["y", 1e-24],
+                    ["r", 1e-27],
+                    ["q", 1e-30],
+                ]);
+
+                let actualValue = value;
+                let baseUnit = inputUnit;
+
+                if (inputUnit.startsWith("da")) {
+                    baseUnit = inputUnit.substring(2);
+                    actualValue = value * 1e1;
+                } else {
+                    for (const [prefix, multiplier] of siPrefixMap) {
+                        if (
+                            prefix !== "" &&
+                            prefix !== "da" &&
+                            inputUnit.startsWith(prefix)
+                        ) {
+                            baseUnit = inputUnit.substring(prefix.length);
+                            actualValue = value * multiplier;
+                            break;
+                        }
+                    }
+                }
+
+                const orderedPrefixes = [
+                    { prefix: "q", multiplier: 1e-30 },
+                    { prefix: "r", multiplier: 1e-27 },
+                    { prefix: "y", multiplier: 1e-24 },
+                    { prefix: "z", multiplier: 1e-21 },
+                    { prefix: "a", multiplier: 1e-18 },
+                    { prefix: "f", multiplier: 1e-15 },
+                    { prefix: "p", multiplier: 1e-12 },
+                    { prefix: "n", multiplier: 1e-9 },
+                    { prefix: "μ", multiplier: 1e-6 },
+                    { prefix: "m", multiplier: 1e-3 },
+                    { prefix: "c", multiplier: 1e-2 },
+                    { prefix: "d", multiplier: 1e-1 },
+                    { prefix: "", multiplier: 1 },
+                    { prefix: "da", multiplier: 1e1 },
+                    { prefix: "h", multiplier: 1e2 },
+                    { prefix: "k", multiplier: 1e3 },
+                    { prefix: "M", multiplier: 1e6 },
+                    { prefix: "G", multiplier: 1e9 },
+                    { prefix: "T", multiplier: 1e12 },
+                    { prefix: "P", multiplier: 1e15 },
+                    { prefix: "E", multiplier: 1e18 },
+                    { prefix: "Z", multiplier: 1e21 },
+                    { prefix: "Y", multiplier: 1e24 },
+                    { prefix: "R", multiplier: 1e27 },
+                    { prefix: "Q", multiplier: 1e30 },
+                ];
+
+                let bestPrefix =
+                    orderedPrefixes.find((p) => p.prefix === "") ||
+                    orderedPrefixes[12];
+
+                // NEW LOGIC: Check from largest to smallest to prefer larger prefixes
+                for (const prefix of orderedPrefixes.slice().reverse()) {
+                    const normalizedValue = actualValue / prefix.multiplier;
+                    if (normalizedValue >= 1 && normalizedValue < 1000) {
+                        bestPrefix = prefix;
+                        break;
+                    }
+                }
+
+                const normalizedValue = actualValue / bestPrefix.multiplier;
+
+                let formattedValue;
+                if (normalizedValue % 1 === 0) {
+                    formattedValue = normalizedValue.toString();
+                } else if (normalizedValue < 10) {
+                    formattedValue = normalizedValue
+                        .toFixed(2)
+                        .replace(/\.?0+$/, "");
+                } else {
+                    formattedValue = normalizedValue
+                        .toFixed(1)
+                        .replace(/\.?0+$/, "");
+                }
+
+                return `${formattedValue} ${bestPrefix.prefix}${baseUnit}`;
+            }
+
+            const testCases = [
+                {
+                    value: 50000,
+                    unit: "Wh",
+                    expected: "50 kWh",
+                    description: "Original problem case",
+                },
+                {
+                    value: 1500,
+                    unit: "Wh",
+                    expected: "1.5 kWh",
+                    description: "Should prefer kWh over 15 hWh",
+                },
+                {
+                    value: 150,
+                    unit: "Wh",
+                    expected: "1.5 hWh",
+                    description: "Should use hWh when appropriate",
+                },
+                {
+                    value: 5000,
+                    unit: "g",
+                    expected: "5 kg",
+                    description: "Mass example",
+                },
+                {
+                    value: 500,
+                    unit: "g",
+                    expected: "500 g",
+                    description: "Should stay in base unit",
+                },
+                {
+                    value: 50,
+                    unit: "g",
+                    expected: "50 g",
+                    description: "Should not use dag",
+                },
+                {
+                    value: 2500000,
+                    unit: "Wh",
+                    expected: "2.5 MWh",
+                    description: "Large energy",
+                },
+                {
+                    value: 750,
+                    unit: "mL",
+                    expected: "750 mL",
+                    description: "Prefixed input",
+                },
+                {
+                    value: 2.5,
+                    unit: "kg",
+                    expected: "2.5 kg",
+                    description: "Already optimal",
+                },
+            ];
+
+            const resultsDiv = document.getElementById("results");
+
+            testCases.forEach((test) => {
+                const result = normalizeToSIUnit(test.value, test.unit);
+                const isCorrect = result === test.expected;
+
+                const div = document.createElement("div");
+                div.className = "test-case";
+                div.innerHTML = `
+                <div class="input">${test.description}: ${test.value} ${
+                    test.unit
+                }</div>
+                <div class="output">→ ${result}</div>
+                <div class="${isCorrect ? "correct" : "incorrect"}">
+                    Expected: ${test.expected} ${isCorrect ? "✅" : "❌"}
+                </div>
+                <br>
+            `;
+                resultsDiv.appendChild(div);
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "dataConfig": {
+        "baseDataPath": "../../Assets/Game Data/JSON",
+        "entityPaths": {
+            "units": "Units",
+            "items": "Items",
+            "buildings": "Buildings",
+            "recipes": "Recipes"
+        },
+        "fileExtension": ".json"
+    }
+}

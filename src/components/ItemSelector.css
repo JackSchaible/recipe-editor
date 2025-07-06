@@ -1,0 +1,42 @@
+/* ItemSelector Component Styles */
+.item-selector {
+    width: 100%;
+}
+
+.item-selector .MuiInputBase-root {
+    transition: all 0.2s ease;
+}
+
+.item-selector .MuiInputBase-root:focus-within {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(76, 217, 196, 0.15);
+}
+
+/* Dark theme adjustments for better visibility */
+.item-selector .MuiAutocomplete-popper {
+    z-index: 1300;
+}
+
+.item-selector .MuiAutocomplete-listbox {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for the dropdown */
+.item-selector .MuiAutocomplete-listbox::-webkit-scrollbar {
+    width: 8px;
+}
+
+.item-selector .MuiAutocomplete-listbox::-webkit-scrollbar-track {
+    background: #1a202c;
+    border-radius: 4px;
+}
+
+.item-selector .MuiAutocomplete-listbox::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+.item-selector .MuiAutocomplete-listbox::-webkit-scrollbar-thumb:hover {
+    background: #63b3ed;
+}

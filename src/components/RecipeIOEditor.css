@@ -1,0 +1,153 @@
+/* Recipe I/O Editor Styles */
+.recipe-io-editor {
+    padding: 0;
+}
+
+.recipe-io-editor__title {
+    margin-bottom: 16px;
+    color: #e2e8f0;
+    font-weight: bold;
+}
+
+.recipe-io-editor__form {
+    /* Uses existing .dark-form class from App.css */
+    margin-bottom: 24px;
+}
+
+.recipe-io-editor__item-select {
+    width: 150px;
+}
+
+.recipe-io-editor__amount-input {
+    width: 80px;
+}
+
+.recipe-io-editor__type-select {
+    width: 100px;
+}
+
+.recipe-io-editor__submit-button {
+    background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(33, 150, 243, 0.4);
+    transition: all 0.2s ease;
+}
+
+.recipe-io-editor__submit-button:hover {
+    background: linear-gradient(45deg, #1976d2 30%, #0097a7 90%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.5);
+}
+
+.recipe-io-editor__cancel-button {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.recipe-io-editor__cancel-button:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.recipe-io-editor__lists {
+    display: flex;
+    gap: 32px;
+}
+
+.recipe-io-editor__list {
+    flex: 1;
+}
+
+.recipe-io-editor__list-title {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.recipe-io-editor__list-title--inputs {
+    color: #ff6b6b;
+}
+
+.recipe-io-editor__list-title--outputs {
+    color: #48bb78;
+}
+
+.recipe-io-editor__list-empty {
+    color: #a0aec0;
+    font-style: italic;
+}
+
+.recipe-io-editor__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    padding: 8px;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+}
+
+.recipe-io-editor__item:hover {
+    opacity: 1;
+}
+
+.recipe-io-editor__item--input {
+    background-color: rgba(255, 107, 107, 0.2);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.recipe-io-editor__item--output {
+    background-color: rgba(72, 187, 120, 0.2);
+    border: 1px solid rgba(72, 187, 120, 0.3);
+}
+
+.recipe-io-editor__item-name {
+    color: #e2e8f0;
+    flex: 1;
+}
+
+.recipe-io-editor__item-amount {
+    font-weight: bold;
+    color: #e2e8f0;
+    min-width: 60px;
+}
+
+.recipe-io-editor__item-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 4px;
+}
+
+.recipe-io-editor__edit-button {
+    min-width: auto;
+    padding: 4px 8px;
+    background: linear-gradient(45deg, #28a745 30%, #20c997 90%);
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+.recipe-io-editor__edit-button:hover {
+    background: linear-gradient(45deg, #218838 30%, #1a9f7a 90%);
+    transform: scale(1.05);
+}
+
+.recipe-io-editor__delete-button {
+    color: #ff6b6b;
+    transition: all 0.2s ease;
+}
+
+.recipe-io-editor__delete-button:hover {
+    color: #ff5252;
+    background-color: rgba(255, 107, 107, 0.1);
+}

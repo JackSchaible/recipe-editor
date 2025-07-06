@@ -1,0 +1,152 @@
+/* Unit CRUD Styles */
+.unit-crud {
+    padding: 24px;
+}
+
+.unit-crud__title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.unit-crud__form-container {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.unit-crud__form-title {
+    margin-bottom: 24px;
+    font-weight: bold;
+    color: #63b3ed;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.unit-crud__form {
+    /* Uses existing .dark-form class from App.css */
+}
+
+.unit-crud__name-input {
+    width: 140px;
+}
+
+.unit-crud__description-input {
+    width: 200px;
+}
+
+.unit-crud__default-input {
+    width: 120px;
+}
+
+.unit-crud__submit-button {
+    background: linear-gradient(45deg, #2196f3 30%, #21cbf3 90%);
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(33, 150, 243, 0.4);
+    transition: all 0.2s ease;
+}
+
+.unit-crud__submit-button:hover {
+    background: linear-gradient(45deg, #1976d2 30%, #0097a7 90%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.5);
+}
+
+.unit-crud__cancel-button {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.unit-crud__cancel-button:hover {
+    background: #ff6b6b;
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+.unit-crud__units-list {
+    /* Container for unit list */
+}
+
+.unit-crud__unit-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+}
+
+.unit-crud__unit-item:hover {
+    border-color: #63b3ed;
+}
+
+.unit-crud__unit-id {
+    /* Uses existing .dark-list-id class from App.css */
+}
+
+.unit-crud__unit-name {
+    min-width: 140px;
+}
+
+.unit-crud__unit-description {
+    min-width: 200px;
+}
+
+.unit-crud__unit-description--empty {
+    font-style: italic;
+}
+
+.unit-crud__unit-default {
+    min-width: 120px;
+}
+
+.unit-crud__unit-actions {
+    margin-left: auto;
+    display: flex;
+    gap: 8px;
+}
+
+.unit-crud__edit-button {
+    background: linear-gradient(45deg, #28a745 30%, #20c997 90%);
+    color: white;
+    font-weight: bold;
+    min-width: auto;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.unit-crud__edit-button:hover {
+    background: linear-gradient(45deg, #218838 30%, #1a9f7a 90%);
+    transform: scale(1.05);
+}
+
+.unit-crud__delete-button {
+    background: linear-gradient(45deg, #dc3545 30%, #fd7e14 90%);
+    color: white;
+    font-weight: bold;
+    min-width: auto;
+    padding: 8px 16px;
+    transition: all 0.2s ease;
+}
+
+.unit-crud__delete-button:hover {
+    background: linear-gradient(45deg, #c82333 30%, #e55a00 90%);
+    transform: scale(1.05);
+}
